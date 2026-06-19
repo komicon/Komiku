@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no,viewport-fit=cover">
-<title>KomikKu - Baca Komik</title>
+<title>KomikKu</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 :root{--gbg:rgba(255,255,255,.75);--gbr:rgba(0,0,0,.06);--blur:40px;--rs:12px;--rm:18px;--rl:28px;--rxl:36px;--ac:#6C5CE7;--ac2:#A29BFE;--gr:linear-gradient(135deg,#6C5CE7,#A29BFE);--red:#FF3B30;--grn:#00B894;--t1:#1a1a2e;--t2:#636e72;--bg1:#f5f6fa;--bg2:#fff;--st:env(safe-area-inset-top,20px);--sb:env(safe-area-inset-bottom,0px)}
@@ -24,8 +24,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 .ticn{font-size:22px;color:var(--t2);transition:color .2s}
 .tlbl{font-size:10px;font-weight:600;color:var(--t2);transition:color .2s}
 .hero{padding:16px 0}.hslider{position:relative;width:100%;overflow:hidden}.htrack{display:flex;transition:transform .5s cubic-bezier(.25,.46,.45,.94)}.hslide{min-width:100%;padding:0 20px}
-.hcard{position:relative;width:100%;height:420px;border-radius:var(--rxl);overflow:hidden;box-shadow:0 20px 60px rgba(108,92,231,.12);background:var(--bg2)}
-.hcard img{width:100%;height:100%;object-fit:cover;display:block}
+.hcard{position:relative;width:100%;height:420px;border-radius:var(--rxl);overflow:hidden;box-shadow:0 20px 60px rgba(108,92,231,.12);background:var(--bg2)}.hcard img{width:100%;height:100%;object-fit:cover;display:block}
 .hovr{position:absolute;bottom:0;left:0;right:0;padding:80px 24px 24px;background:linear-gradient(transparent,rgba(0,0,0,.85));color:#fff}
 .hbdg{display:inline-block;padding:4px 12px;background:var(--ac);border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;margin-bottom:8px}
 .htitle{font-size:22px;font-weight:800;margin-bottom:6px;line-height:1.2;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -34,9 +33,8 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 .sec{padding:8px 20px 16px}.sec-hdr{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px}.sec-title{font-size:20px;font-weight:800;letter-spacing:-.5px}.sec-more{font-size:14px;font-weight:600;color:var(--ac);cursor:pointer}
 .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
 .ccard{border-radius:var(--rm);overflow:hidden;cursor:pointer;transition:transform .2s;background:var(--bg2);box-shadow:0 4px 12px rgba(0,0,0,.05)}.ccard:active{transform:scale(.96)}
-.ccover{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;background:var(--bg2)}.ccover img{width:100%;height:100%;object-fit:cover;display:block}
+.ccover{position:relative;width:100%;aspect-ratio:2/3;overflow:hidden;background:#e0e0e0}.ccover img{width:100%;height:100%;object-fit:cover;display:block}
 .cbadge{position:absolute;top:8px;left:8px;padding:3px 8px;border-radius:6px;font-size:9px;font-weight:700;text-transform:uppercase;color:#fff;background:var(--ac)}
-.crating{position:absolute;bottom:8px;right:8px;padding:3px 7px;border-radius:6px;background:rgba(0,0,0,.7);color:#FFD60A;font-size:10px;font-weight:700;display:flex;align-items:center;gap:3px}
 .cinfo{padding:10px}.ctitle{font-size:12px;font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;margin-bottom:4px}.cchap{font-size:11px;color:var(--t2);font-weight:500}
 .hscr{display:flex;gap:14px;overflow-x:auto;padding:0 20px;scrollbar-width:none;scroll-snap-type:x mandatory}.hscr::-webkit-scrollbar{display:none}.hscr .ccard{min-width:140px;max-width:140px;scroll-snap-align:start}
 .pgview{display:none;animation:fadeIn .3s ease}.pgview.active{display:block}
@@ -45,7 +43,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 .det-hdr-ovr{position:absolute;bottom:0;left:0;right:0;padding:80px 20px 20px;background:linear-gradient(transparent,var(--bg1))}
 .det-back{position:absolute;top:calc(var(--st) + 12px);left:16px;width:40px;height:40px;border-radius:50%;background:var(--gbg);backdrop-filter:blur(20px);border:1px solid var(--gbr);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:20px;z-index:10}
 .det-cnt{padding:0 20px;margin-top:-40px;position:relative;z-index:5}.det-crow{display:flex;gap:16px;align-items:flex-end}
-.det-cov{width:130px;height:195px;border-radius:var(--rm);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.2);flex-shrink:0;background:var(--bg2)}.det-cov img{width:100%;height:100%;object-fit:cover}
+.det-cov{width:130px;height:195px;border-radius:var(--rm);overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.2);flex-shrink:0;background:#e0e0e0}.det-cov img{width:100%;height:100%;object-fit:cover}
 .det-meta{flex:1}.det-title{font-size:20px;font-weight:800;line-height:1.2;margin-bottom:8px}
 .det-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}.det-tag{padding:4px 10px;border-radius:20px;background:var(--bg2);border:1px solid var(--gbr);font-size:11px;font-weight:600;color:var(--t2)}
 .det-stats{display:flex;gap:16px}.det-stat{text-align:center}.det-sv{font-size:16px;font-weight:800;color:var(--ac)}.det-sl{font-size:10px;color:var(--t2);font-weight:600}
@@ -61,7 +59,7 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 .rdpage{padding-top:calc(var(--st) + 60px)}
 .rdhdr{position:fixed;top:0;left:0;right:0;z-index:200;padding:calc(var(--st) + 8px) 16px 12px;background:var(--gbg);backdrop-filter:blur(var(--blur));border-bottom:1px solid var(--gbr);display:flex;align-items:center;gap:12px}
 .rdtitle{flex:1;font-size:14px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rdimgs{display:flex;flex-direction:column;align-items:center;gap:2px}.rdimgs img{width:100%;max-width:800px;display:block;background:var(--bg2);min-height:100px}
+.rdimgs{display:flex;flex-direction:column;align-items:center;gap:2px}.rdimgs img{width:100%;max-width:800px;display:block;background:#e0e0e0;min-height:200px}
 .rdnav{display:flex;gap:12px;padding:20px;justify-content:center;flex-wrap:wrap}.rdnav .btn-p{flex:none;padding:14px 28px}
 .sitem{display:flex;align-items:center;justify-content:space-between;padding:16px;background:var(--bg2);border-radius:var(--rm);margin-bottom:8px;border:1px solid var(--gbr)}
 .sleft{display:flex;align-items:center;gap:12px}.sicon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px}.slbl{font-size:15px;font-weight:600}
@@ -70,14 +68,12 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 .ldbox{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:60px 20px;gap:16px}
 .spinner{width:36px;height:36px;border:3px solid var(--gbr);border-top-color:var(--ac);border-radius:50%;animation:spin .8s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
 .ldtxt{font-size:14px;color:var(--t2);font-weight:500}
-.toast{position:fixed;top:calc(var(--st) + 60px);left:50%;transform:translateX(-50%) translateY(-100px);padding:12px 24px;background:rgba(30,30,30,.9);backdrop-filter:blur(20px);border-radius:50px;color:#fff;font-size:14px;font-weight:600;z-index:9999;transition:transform .3s cubic-bezier(.68,-.55,.265,1.55);white-space:nowrap}
-.toast.show{transform:translateX(-50%) translateY(0)}
+.toast{position:fixed;top:calc(var(--st) + 60px);left:50%;transform:translateX(-50%) translateY(-100px);padding:12px 24px;background:rgba(30,30,30,.9);backdrop-filter:blur(20px);border-radius:50px;color:#fff;font-size:14px;font-weight:600;z-index:9999;transition:transform .3s cubic-bezier(.68,-.55,.265,1.55);white-space:nowrap}.toast.show{transform:translateX(-50%) translateY(0)}
 .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 20px}.gcard{padding:16px;border-radius:var(--rm);text-align:center;cursor:pointer;transition:all .2s;background:var(--bg2);border:1px solid var(--gbr)}.gcard:active{transform:scale(.95)}.gicon{font-size:28px;margin-bottom:6px}.gname{font-size:13px;font-weight:600}
 .bkempty{text-align:center;padding:60px 20px}.bkempty-icon{font-size:60px;margin-bottom:16px}.bkempty h3{font-size:18px;font-weight:700;margin-bottom:8px}.bkempty p{color:var(--t2);font-size:14px}
 .banner{padding:10px 20px;text-align:center;font-size:13px;font-weight:600;transition:all .3s}.banner.ld{background:#6C5CE722;color:var(--ac)}.banner.ok{background:#00B89422;color:var(--grn)}.banner.err{background:#FF3B3022;color:var(--red)}
 .skel{background:linear-gradient(90deg,var(--bg2) 25%,var(--bg1) 50%,var(--bg2) 75%);background-size:200% 100%;animation:shimmer 1.5s infinite;border-radius:var(--rm)}@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-.status-bar{padding:8px 20px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}.status-dot{width:8px;height:8px;border-radius:50%}
-.status-dot.on{background:var(--grn)}.status-dot.off{background:var(--red)}
+.status-bar{padding:8px 20px;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600}.sdot{width:8px;height:8px;border-radius:50%}.sdot.on{background:var(--grn)}.sdot.off{background:var(--red)}
 @media(min-width:768px){.cgrid{grid-template-columns:repeat(4,1fr)}.hcard{height:480px}}
 @media(min-width:1024px){.cgrid{grid-template-columns:repeat(6,1fr)}}
 ::-webkit-scrollbar{display:none}
@@ -99,12 +95,12 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 
 <main id="mainCnt">
 <div class="pgview active" id="pgHome">
-<div class="status-bar" id="statusBar"><div class="status-dot off" id="statusDot"></div><span id="statusText">Memeriksa proxy...</span></div>
+<div class="status-bar" id="statusBar"><div class="sdot off" id="statusDot"></div><span id="statusText">Memeriksa proxy...</span></div>
 <div class="hero"><div class="hslider"><div class="htrack" id="htrack"></div></div><div class="hdots" id="hdots"></div></div>
-<div class="sec"><div class="sec-hdr"><h2 class="sec-title">🔥 Populer</h2><a class="sec-more" onclick="loadMore('popular')">Lihat Semua</a></div><div class="hscr" id="popScroll"></div></div>
-<div class="sec"><div class="sec-hdr"><h2 class="sec-title">⚡ Terbaru</h2><a class="sec-more" onclick="loadMore('latest')">Lihat Semua</a></div><div class="cgrid" id="latestGrid"></div></div>
-<div class="sec"><div class="sec-hdr"><h2 class="sec-title">📗 Manhwa Korea</h2></div><div class="hscr" id="manhwaScroll"></div></div>
-<div class="sec"><div class="sec-hdr"><h2 class="sec-title">📘 Manhua China</h2></div><div class="hscr" id="manhuaScroll"></div></div>
+<div class="sec"><div class="sec-hdr"><h2 class="sec-title">🔥 Populer</h2><a class="sec-more" onclick="loadMore('popular')">Semua</a></div><div class="hscr" id="popScroll"></div></div>
+<div class="sec"><div class="sec-hdr"><h2 class="sec-title">⚡ Terbaru</h2><a class="sec-more" onclick="loadMore('latest')">Semua</a></div><div class="cgrid" id="latestGrid"></div></div>
+<div class="sec"><div class="sec-hdr"><h2 class="sec-title">📗 Manhwa</h2></div><div class="hscr" id="manhwaScroll"></div></div>
+<div class="sec"><div class="sec-hdr"><h2 class="sec-title">📘 Manhua</h2></div><div class="hscr" id="manhuaScroll"></div></div>
 <div class="sec"><div class="sec-hdr"><h2 class="sec-title">🎭 Genre</h2></div></div>
 <div class="ggrid" id="genreGrid"></div>
 <div style="height:20px"></div>
@@ -123,237 +119,367 @@ body{font-family:'Inter',-apple-system,sans-serif;background:var(--bg1);color:va
 </nav>
 
 <script>
-var MD='https://api.mangadex.org';
-var COVER_CDN='https://uploads.mangadex.org/covers';
-var S={slide:0,slideTmr:null,popular:[],latest:[],manhwaList:[],manhuaList:[],allComics:[],bookmarks:JSON.parse(localStorage.getItem('bk6')||'[]'),theme:localStorage.getItem('th6')||'light',apiOk:false,lastUpd:null,curDetail:null,curChapters:[],proxyOk:false};
-var _cache={},CACHE_TTL=600000;
+// ==============================================
+//  KONFIGURASI
+// ==============================================
+var MD = 'https://api.mangadex.org';
+var PROXY = '/api/proxy?url=';
 
-function escXml(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
-function sleep(ms){return new Promise(function(r){setTimeout(r,ms);});}
+var S = {
+  slide:0, slideTmr:null,
+  popular:[], latest:[], manhwaList:[], manhuaList:[], allComics:[],
+  bookmarks: JSON.parse(localStorage.getItem('bk7')||'[]'),
+  theme: localStorage.getItem('th7')||'light',
+  apiOk:false, proxyOk:false, lastUpd:null,
+  curDetail:null, curChapters:[],
+};
+var _cache = {};
+var CACHE_TTL = 600000;
 
-// ===== PROXY: /api/proxy?url=... (Vercel) =====
-async function apiFetch(path){
-  var ck=path;
-  if(_cache[ck]&&Date.now()-_cache[ck].t<CACHE_TTL)return _cache[ck].d;
-  var targetUrl=MD+path;
-  // Coba proxy lokal (Vercel)
-  try{
-    var r=await fetch('/api/proxy?url='+encodeURIComponent(targetUrl));
-    if(r.ok){
-      var data=await r.json();
-      _cache[ck]={d:data,t:Date.now()};
-      S.apiOk=true;S.proxyOk=true;
-      return data;
-    }
-  }catch(e){console.warn('Proxy gagal:',e.message);}
-  // Fallback: coba langsung (mungkin CORS ok di environment tertentu)
-  try{
-    var r=await fetch(targetUrl);
-    if(r.ok){
-      var data=await r.json();
-      _cache[ck]={d:data,t:Date.now()};
-      S.apiOk=true;
-      return data;
-    }
-  }catch(e){console.warn('Direct gagal:',e.message);}
-  return _cache[ck]?_cache[ck].d:null;
+function esc(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function sleep(ms){return new Promise(function(r){setTimeout(r,ms)});}
+
+// ==============================================
+//  API FETCH — melalui proxy Vercel
+// ==============================================
+async function api(path) {
+  if (_cache[path] && Date.now()-_cache[path].t < CACHE_TTL) return _cache[path].d;
+  var url = MD + path;
+  try {
+    var r = await fetch(PROXY + encodeURIComponent(url));
+    if (!r.ok) { console.warn('API HTTP',r.status,path); return null; }
+    var data = await r.json();
+    _cache[path] = {d:data, t:Date.now()};
+    S.apiOk = true;
+    return data;
+  } catch(e) {
+    console.error('API err:',path,e.message);
+    return _cache[path] ? _cache[path].d : null;
+  }
 }
 
-// ===== TEST PROXY =====
+// ==============================================
+//  PROXY GAMBAR — semua gambar lewat Vercel
+// ==============================================
+function pimg(url) {
+  if (!url) return '';
+  return '/api/proxy?url=' + encodeURIComponent(url);
+}
+
+// ==============================================
+//  SVG PLACEHOLDER
+// ==============================================
+var PAL=[['#6C5CE7','#A29BFE'],['#00B894','#55EFC4'],['#0984E3','#74B9FF'],['#E17055','#FAB1A0'],['#FDCB6E','#F8E71C'],['#D63031','#FF7675']];
+var EMO=['📖','⚔️','🐉','🌟','💫','🔥','👊','🗡️','🏴‍☠️','🦸','👹','🎭','💀','🌸','⚡'];
+
+function mkPH(title,idx){
+  var p=PAL[(idx||0)%PAL.length], e=EMO[(idx||0)%EMO.length], t=(title||'Komik').substring(0,16);
+  return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="'+p[0]+'"/><stop offset="100%" stop-color="'+p[1]+'"/></linearGradient></defs><rect fill="url(#g)" width="300" height="450" rx="8"/><text x="150" y="190" text-anchor="middle" fill="white" font-size="72">'+e+'</text><text x="150" y="260" text-anchor="middle" fill="white" font-size="17" font-weight="bold">'+esc(t)+'</text></svg>');
+}
+
+// ==============================================
+//  IMG TAG — proxy + fallback handling
+// ==============================================
+function img(url, title, idx, extra) {
+  var ph = mkPH(title, idx);
+  var src = url ? pimg(url) : ph;
+  return '<img src="'+src+'" '
+    +'data-raw="'+esc(url||'')+'" '
+    +'data-ph="'+esc(ph)+'" '
+    +'data-try="0" '
+    +'loading="lazy" '
+    +'onerror="imgErr(this)" '
+    +'alt="'+esc(title||'')+'" '
+    +(extra||'')+'>';
+}
+
+function imgErr(el) {
+  var t = parseInt(el.getAttribute('data-try')||'0');
+  var raw = el.getAttribute('data-raw')||'';
+  var ph = el.getAttribute('data-ph')||'';
+  el.onerror = null;
+  if (t===0 && raw) {
+    // Fallback 1: coba URL langsung tanpa proxy
+    el.setAttribute('data-try','1');
+    el.onerror = function(){imgErr(this);};
+    el.src = raw;
+  } else if (t===1 && raw) {
+    // Fallback 2: coba wsrv.nl proxy
+    el.setAttribute('data-try','2');
+    el.onerror = function(){imgErr(this);};
+    el.src = 'https://wsrv.nl/?url='+encodeURIComponent(raw)+'&w=600&q=75';
+  } else {
+    // Fallback 3: placeholder
+    el.src = ph;
+  }
+}
+
+// ==============================================
+//  MANGADEX PARSER
+// ==============================================
+function getTitle(m){var a=m.attributes;if(!a||!a.title)return'Unknown';var t=a.title;return t.en||t['ja-ro']||t.ja||t.ko||Object.values(t)[0]||'Unknown';}
+function getDesc(m){var a=m.attributes;if(!a||!a.description)return'';var d=a.description;return d.id||d.en||d['ja-ro']||Object.values(d).find(function(v){return v})||'';}
+
+function getCover(id,rels){
+  if(!rels) return '';
+  for(var i=0;i<rels.length;i++){
+    if(rels[i].type==='cover_art' && rels[i].attributes && rels[i].attributes.fileName){
+      return 'https://uploads.mangadex.org/covers/'+id+'/'+rels[i].attributes.fileName+'.512.jpg';
+    }
+  }
+  return '';
+}
+
+function getType(m){var a=m.attributes;if(!a)return'manga';var o=a.originalLanguage||'';if(o==='ko')return'manhwa';if(o==='zh')return'manhua';return'manga';}
+
+function parseList(d){
+  if(!d||!d.data||!Array.isArray(d.data)){console.warn('parseList: invalid',d?Object.keys(d):'null');return[];}
+  console.log('parseList:',d.data.length,'items');
+  return d.data.map(function(m){
+    var tags=(m.attributes&&m.attributes.tags||[]).map(function(t){return t.attributes&&t.attributes.name&&t.attributes.name.en||'';}).filter(Boolean);
+    var cover=getCover(m.id,m.relationships);
+    console.log('  →',getTitle(m).substring(0,30),'| cover:',cover?'YES':'NO','| type:',getType(m));
+    return{id:m.id,title:getTitle(m),cover:cover,type:getType(m),desc:getDesc(m),tags:tags.slice(0,5),status:m.attributes?m.attributes.status||'':'',year:m.attributes?m.attributes.year||'':''};
+  });
+}
+
+// ==============================================
+//  CARDS & SKELETONS
+// ==============================================
+function card(c,i){return '<div class="ccard" onclick="openDetail(\''+c.id+'\')"><div class="ccover">'+img(c.cover,c.title,i)+'<span class="cbadge">'+esc(c.type)+'</span></div><div class="cinfo"><div class="ctitle">'+esc(c.title)+'</div></div></div>';}
+function skS(n){var h='';for(var i=0;i<n;i++)h+='<div class="ccard" style="min-width:140px;max-width:140px"><div class="ccover skel"></div><div class="cinfo"><div class="skel" style="height:12px;margin-bottom:4px;border-radius:4px"></div></div></div>';return h;}
+function skG(n){var h='';for(var i=0;i<n;i++)h+='<div class="ccard"><div class="ccover skel"></div><div class="cinfo"><div class="skel" style="height:14px;margin-bottom:6px;border-radius:4px"></div></div></div>';return h;}
+
+// ==============================================
+//  RENDER
+// ==============================================
+function renderHero(){var s=S.popular.slice(0,5);var tk=document.getElementById('htrack');var dt=document.getElementById('hdots');if(!s.length){tk.innerHTML='<div class="hslide"><div class="hcard" style="display:flex;align-items:center;justify-content:center;color:var(--t2)"><p>Menunggu data...</p></div></div>';dt.innerHTML='';return;}tk.innerHTML=s.map(function(c,i){return '<div class="hslide" onclick="openDetail(\''+c.id+'\')"><div class="hcard">'+img(c.cover,c.title,i)+'<div class="hovr"><span class="hbdg">'+esc(c.type)+'</span><h2 class="htitle">'+esc(c.title)+'</h2><p class="hdesc">'+esc((c.desc||'Baca!').substring(0,120))+'</p></div></div></div>';}).join('');dt.innerHTML=s.map(function(_,i){return '<div class="hdot'+(i===0?' active':'')+'" onclick="goSlide('+i+')"></div>';}).join('');}
+
+function renderSec(id,list){var el=document.getElementById(id);if(!el)return;if(!list.length){el.innerHTML='<div class="ldbox" style="width:100%"><span class="ldtxt">Belum ada data</span></div>';return;}if(el.classList.contains('hscr'))el.innerHTML=list.slice(0,15).map(function(c,i){return card(c,i);}).join('');else el.innerHTML=list.slice(0,12).map(function(c,i){return card(c,i);}).join('');}
+
+function renderGenres(){var g=[{n:'Action',i:'⚔️',id:'391b0423-d847-456f-aff0-8b0cfc03066b'},{n:'Romance',i:'💕',id:'423e2eae-a7a2-4a8b-ac03-a8351462d71d'},{n:'Fantasy',i:'🧙',id:'acc806a4-c429-4068-b8dd-4225ea821123'},{n:'Comedy',i:'😂',id:'4d32cc48-9f00-4cca-9b5a-a830f07f1078'},{n:'Horror',i:'👻',id:'cdad7e68-1419-4c19-affb-8ea5f67999a8'},{n:'Slice of Life',i:'🌸',id:'e5301a23-ebd9-49dd-a0cb-2add944c7fe9'},{n:'Sci-Fi',i:'🚀',id:'256c8bd9-4904-4360-bf4f-508a067ec28c'},{n:'Mystery',i:'🔮',id:'ee968100-4191-4968-b1b3-f71c31c12e42'}];document.getElementById('genreGrid').innerHTML=g.map(function(x){return '<div class="gcard" onclick="browseGenre(\''+esc(x.n)+'\',\''+x.id+'\')"><div class="gicon">'+x.i+'</div><div class="gname">'+x.n+'</div></div>';}).join('');}
+
+function renderAll(){renderHero();renderSec('popScroll',S.popular);renderSec('latestGrid',S.latest);renderSec('manhwaScroll',S.manhwaList);renderSec('manhuaScroll',S.manhuaList);renderGenres();}
+function showLoad(){document.getElementById('popScroll').innerHTML=skS(8);document.getElementById('latestGrid').innerHTML=skG(9);document.getElementById('manhwaScroll').innerHTML=skS(8);document.getElementById('manhuaScroll').innerHTML=skS(8);}
+
+// ==============================================
+//  SLIDER
+// ==============================================
+function startSlider(){if(S.slideTmr)clearInterval(S.slideTmr);S.slideTmr=setInterval(function(){var mx=Math.min(S.popular.length,5);if(mx<=1)return;S.slide=(S.slide+1)%mx;updSlider();},4000);}
+function goSlide(i){S.slide=i;updSlider();clearInterval(S.slideTmr);startSlider();}
+function updSlider(){var t=document.getElementById('htrack');if(t)t.style.transform='translateX(-'+(S.slide*100)+'%)';document.querySelectorAll('.hdot').forEach(function(d,i){d.classList.toggle('active',i===S.slide);});}
+
+// ==============================================
+//  BANNER & STATUS
+// ==============================================
+function banner(t,m){var b=document.getElementById('banner');b.className='banner '+t;b.textContent=m;b.style.display='block';}
+function hideB(){document.getElementById('banner').style.display='none';}
+
+// ==============================================
+//  TEST PROXY
+// ==============================================
 async function testProxy(){
   var dot=document.getElementById('statusDot');
   var txt=document.getElementById('statusText');
   try{
-    var r=await fetch('/api/proxy?url='+encodeURIComponent(MD+'/manga?limit=1'));
-    if(r.ok){
-      var data=await r.json();
-      if(data.data){
-        dot.className='status-dot on';
-        txt.textContent='✅ Proxy aktif — MangaDex terhubung!';
-        S.proxyOk=true;
-        return true;
-      }
-    }
+    var r=await fetch(PROXY+encodeURIComponent(MD+'/manga?limit=1'));
+    if(r.ok){var d=await r.json();if(d.data){dot.className='sdot on';txt.textContent='✅ Proxy aktif — terhubung ke MangaDex';S.proxyOk=true;return true;}}
   }catch(e){}
-  dot.className='status-dot off';
-  txt.innerHTML='❌ Proxy tidak aktif. <b>Deploy ke Vercel untuk mengaktifkan!</b> <a href="https://vercel.com" target="_blank" style="color:var(--ac)">vercel.com</a>';
+  dot.className='sdot off';
+  txt.textContent='❌ Proxy gagal. Pastikan api/proxy.js ada di repo Vercel.';
   return false;
 }
 
-// ===== SVG PLACEHOLDER =====
-var COLORS=[['#6C5CE7','#A29BFE'],['#00B894','#55EFC4'],['#0984E3','#74B9FF'],['#E17055','#FAB1A0'],['#FDCB6E','#F8E71C'],['#D63031','#FF7675']];
-var EMOJIS=['📖','⚔️','🐉','🌟','💫','🔥','👊','🗡️','🏴‍☠️','🦸','👹','🎭','💀','🌸','⚡'];
-function makePH(title,idx){var pal=COLORS[(idx||0)%COLORS.length];var emoji=EMOJIS[(idx||0)%EMOJIS.length];var t=(title||'Komik').substring(0,18);return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="450"><defs><linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="'+pal[0]+'"/><stop offset="100%" stop-color="'+pal[1]+'"/></linearGradient></defs><rect fill="url(#g)" width="300" height="450" rx="8"/><text x="150" y="190" text-anchor="middle" fill="white" font-size="72" font-family="Arial">'+emoji+'</text><text x="150" y="260" text-anchor="middle" fill="white" font-size="17" font-family="Arial" font-weight="bold">'+escXml(t)+'</text></svg>');}
-function imgTag(url,title,idx,extra){var ph=makePH(title,idx);var src=url||ph;return '<img src="'+src+'" alt="'+escXml(title||'')+'" data-orig="'+escXml(url||'')+'" data-ph="'+escXml(ph)+'" data-try="0" loading="lazy" onerror="imgErr(this)" '+(extra||'')+'>';}
-function imgErr(img){var t=parseInt(img.getAttribute('data-try')||'0');var o=img.getAttribute('data-orig')||'';var p=img.getAttribute('data-ph')||'';img.onerror=null;if(t===0&&o){img.setAttribute('data-try','1');img.onerror=function(){imgErr(this);};img.src='https://wsrv.nl/?url='+encodeURIComponent(o)+'&w=400&q=80';}else{img.src=p;}}
-
-// ===== MANGADEX PARSER =====
-function getTitle(m){var a=m.attributes;if(!a||!a.title)return'Unknown';var t=a.title;return t.en||t['ja-ro']||t.ja||t.ko||Object.values(t)[0]||'Unknown';}
-function getDesc(m){var a=m.attributes;if(!a||!a.description)return'';var d=a.description;return d.id||d.en||d['ja-ro']||Object.values(d).find(function(v){return v;})||'';}
-function getCover(id,rels){if(!rels)return'';for(var i=0;i<rels.length;i++){if(rels[i].type==='cover_art'&&rels[i].attributes){var fn=rels[i].attributes.fileName;if(fn)return COVER_CDN+'/'+id+'/'+fn+'.256.jpg';}}return'';}
-function getType(m){var a=m.attributes;if(!a)return'manga';var ol=a.originalLanguage||'';if(ol==='ko')return'manhwa';if(ol==='zh')return'manhua';return'manga';}
-
-function parseList(d){
-  if(!d||!d.data||!Array.isArray(d.data))return[];
-  return d.data.map(function(m){
-    var tags=(m.attributes&&m.attributes.tags||[]).map(function(t){return t.attributes&&t.attributes.name&&t.attributes.name.en||'';}).filter(Boolean);
-    return{id:m.id,title:getTitle(m),cover:getCover(m.id,m.relationships),type:getType(m),desc:getDesc(m),tags:tags.slice(0,5),status:m.attributes?m.attributes.status||'':'',year:m.attributes?m.attributes.year||'':''};
-  });
-}
-
-// ===== CARDS =====
-function comicCard(c,i){return '<div class="ccard" onclick="openDetail(\''+c.id+'\')"><div class="ccover">'+imgTag(c.cover,c.title,i)+'<span class="cbadge">'+escXml(c.type)+'</span></div><div class="cinfo"><div class="ctitle">'+escXml(c.title)+'</div></div></div>';}
-function skelScroll(n){var h='';for(var i=0;i<n;i++)h+='<div class="ccard" style="min-width:140px;max-width:140px"><div class="ccover skel"></div><div class="cinfo"><div class="skel" style="height:12px;margin-bottom:4px;border-radius:4px"></div><div class="skel" style="height:10px;width:60%;border-radius:4px"></div></div></div>';return h;}
-function skelCards(n){var h='';for(var i=0;i<n;i++)h+='<div class="ccard"><div class="ccover skel"></div><div class="cinfo"><div class="skel" style="height:14px;margin-bottom:6px;border-radius:4px"></div><div class="skel" style="height:10px;width:60%;border-radius:4px"></div></div></div>';return h;}
-
-// ===== RENDER =====
-function renderHero(){var slides=S.popular.slice(0,5);var track=document.getElementById('htrack');var dots=document.getElementById('hdots');if(!slides.length){track.innerHTML='<div class="hslide"><div class="hcard" style="display:flex;align-items:center;justify-content:center;color:var(--t2)"><p>Menunggu data...</p></div></div>';dots.innerHTML='';return;}track.innerHTML=slides.map(function(c,i){return '<div class="hslide" onclick="openDetail(\''+c.id+'\')"><div class="hcard">'+imgTag(c.cover,c.title,i)+'<div class="hovr"><span class="hbdg">'+escXml(c.type)+'</span><h2 class="htitle">'+escXml(c.title)+'</h2><p class="hdesc">'+escXml((c.desc||'Baca sekarang!').substring(0,120))+'</p></div></div></div>';}).join('');dots.innerHTML=slides.map(function(_,i){return '<div class="hdot'+(i===0?' active':'')+'" onclick="goSlide('+i+')"></div>';}).join('');}
-function renderSection(id,list){var el=document.getElementById(id);if(!el)return;if(!list.length){el.innerHTML='<div class="ldbox" style="width:100%"><span class="ldtxt">Belum ada data</span></div>';return;}if(el.classList.contains('hscr'))el.innerHTML=list.slice(0,15).map(function(c,i){return comicCard(c,i);}).join('');else el.innerHTML=list.slice(0,12).map(function(c,i){return comicCard(c,i);}).join('');}
-function renderGenres(){var g=[{n:'Action',i:'⚔️',id:'391b0423-d847-456f-aff0-8b0cfc03066b'},{n:'Romance',i:'💕',id:'423e2eae-a7a2-4a8b-ac03-a8351462d71d'},{n:'Fantasy',i:'🧙',id:'acc806a4-c429-4068-b8dd-4225ea821123'},{n:'Comedy',i:'😂',id:'4d32cc48-9f00-4cca-9b5a-a830f07f1078'},{n:'Horror',i:'👻',id:'cdad7e68-1419-4c19-affb-8ea5f67999a8'},{n:'Slice of Life',i:'🌸',id:'e5301a23-ebd9-49dd-a0cb-2add944c7fe9'},{n:'Sci-Fi',i:'🚀',id:'256c8bd9-4904-4360-bf4f-508a067ec28c'},{n:'Mystery',i:'🔮',id:'ee968100-4191-4968-b1b3-f71c31c12e42'}];document.getElementById('genreGrid').innerHTML=g.map(function(x){return '<div class="gcard" onclick="browseGenre(\''+escXml(x.n)+'\',\''+x.id+'\')"><div class="gicon">'+x.i+'</div><div class="gname">'+x.n+'</div></div>';}).join('');}
-function renderAll(){renderHero();renderSection('popScroll',S.popular);renderSection('latestGrid',S.latest);renderSection('manhwaScroll',S.manhwaList);renderSection('manhuaScroll',S.manhuaList);renderGenres();}
-function showLoading(){document.getElementById('popScroll').innerHTML=skelScroll(8);document.getElementById('latestGrid').innerHTML=skelCards(9);document.getElementById('manhwaScroll').innerHTML=skelScroll(8);document.getElementById('manhuaScroll').innerHTML=skelScroll(8);}
-
-// ===== SLIDER =====
-function startSlider(){if(S.slideTmr)clearInterval(S.slideTmr);S.slideTmr=setInterval(function(){var max=Math.min(S.popular.length,5);if(max<=1)return;S.slide=(S.slide+1)%max;updateSlider();},4000);}
-function goSlide(i){S.slide=i;updateSlider();clearInterval(S.slideTmr);startSlider();}
-function updateSlider(){var t=document.getElementById('htrack');if(t)t.style.transform='translateX(-'+(S.slide*100)+'%)';document.querySelectorAll('.hdot').forEach(function(d,i){d.classList.toggle('active',i===S.slide);});}
-
-// ===== BANNER =====
-function showBanner(t,m){var b=document.getElementById('banner');b.className='banner '+t;b.textContent=m;b.style.display='block';}
-function hideBanner(){document.getElementById('banner').style.display='none';}
-
-// ===== INIT =====
+// ==============================================
+//  INIT
+// ==============================================
 async function init(){
-  applyTheme();
-  showLoading();
-  showBanner('ld','⏳ Memeriksa koneksi proxy...');
-  
-  // Test proxy dulu
-  var proxyWorks = await testProxy();
-  
-  if(!proxyWorks){
-    showBanner('err','❌ Proxy tidak aktif! Deploy ke Vercel untuk mengaktifkan baca komik.');
-    // Tetap render genre dan UI
-    renderGenres();
-    renderHero();
-    return;
-  }
-  
-  showBanner('ld','⏳ Memuat komik dari MangaDex...');
+  applyTheme();showLoad();
+  banner('ld','⏳ Memeriksa proxy Vercel...');
+
+  var ok=await testProxy();
+  if(!ok){banner('err','❌ Proxy tidak aktif! Pastikan file api/proxy.js sudah di-deploy ke Vercel.');renderGenres();renderHero();return;}
+
+  banner('ld','⏳ Memuat komik populer...');
   try{
-    var popRes=await apiFetch('/manga?limit=15&order[followedCount]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
-    S.popular=parseList(popRes);
-    await sleep(600);
-    
-    var latRes=await apiFetch('/manga?limit=18&order[updatedAt]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
-    S.latest=parseList(latRes);
-    await sleep(600);
-    
-    var mhRes=await apiFetch('/manga?limit=15&order[followedCount]=desc&includes[]=cover_art&originalLanguage[]=ko&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
-    S.manhwaList=parseList(mhRes);
-    await sleep(600);
-    
-    var muRes=await apiFetch('/manga?limit=15&order[followedCount]=desc&includes[]=cover_art&originalLanguage[]=zh&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
-    S.manhuaList=parseList(muRes);
-    
+    var p1=await api('/manga?limit=15&order[followedCount]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
+    S.popular=parseList(p1);
+    console.log('Popular:',S.popular.length,'items');
+    await sleep(700);
+
+    banner('ld','⏳ Memuat komik terbaru...');
+    var p2=await api('/manga?limit=18&order[updatedAt]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
+    S.latest=parseList(p2);
+    console.log('Latest:',S.latest.length,'items');
+    await sleep(700);
+
+    banner('ld','⏳ Memuat manhwa...');
+    var p3=await api('/manga?limit=15&order[followedCount]=desc&includes[]=cover_art&originalLanguage[]=ko&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
+    S.manhwaList=parseList(p3);
+    console.log('Manhwa:',S.manhwaList.length,'items');
+    await sleep(700);
+
+    banner('ld','⏳ Memuat manhua...');
+    var p4=await api('/manga?limit=15&order[followedCount]=desc&includes[]=cover_art&originalLanguage[]=zh&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');
+    S.manhuaList=parseList(p4);
+    console.log('Manhua:',S.manhuaList.length,'items');
+
     var all=[].concat(S.popular,S.latest,S.manhwaList,S.manhuaList);
     var seen={};S.allComics=[];
     for(var i=0;i<all.length;i++){if(!seen[all[i].id]){seen[all[i].id]=true;S.allComics.push(all[i]);}}
     S.lastUpd=new Date();
-    
-    if(S.allComics.length>0){showBanner('ok','✅ '+S.allComics.length+' komik berhasil dimuat!');setTimeout(hideBanner,4000);}
-    else{showBanner('err','⚠️ Data kosong dari MangaDex.');}
-  }catch(e){showBanner('err','⚠️ Error: '+e.message);}
-  
+
+    if(S.allComics.length>0){banner('ok','✅ '+S.allComics.length+' komik berhasil dimuat!');setTimeout(hideB,4000);}
+    else banner('err','⚠️ Data kosong.');
+  }catch(e){banner('err','⚠️ Error: '+e.message);console.error(e);}
+
   renderAll();startSlider();
 }
 
-// ===== NAVIGATION =====
-function switchTab(tab){document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.querySelectorAll('.titem').forEach(function(t){t.classList.remove('active');});var tabs=['home','browse','bookmark','settings'];var idx=tabs.indexOf(tab);var tEls=document.querySelectorAll('.titem');if(tEls[idx])tEls[idx].classList.add('active');if(tab==='home')document.getElementById('pgHome').classList.add('active');else if(tab==='browse')document.getElementById('pgBrowse').classList.add('active');else if(tab==='bookmark'){document.getElementById('pgBookmark').classList.add('active');renderBookmarks();}else if(tab==='settings')renderSettings();window.scrollTo({top:0,behavior:'smooth'});}
+// ==============================================
+//  NAVIGATION
+// ==============================================
+function switchTab(tab){
+  document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.titem').forEach(function(t){t.classList.remove('active');});
+  var tabs=['home','browse','bookmark','settings'];
+  var idx=tabs.indexOf(tab);var tEls=document.querySelectorAll('.titem');
+  if(tEls[idx])tEls[idx].classList.add('active');
+  if(tab==='home')document.getElementById('pgHome').classList.add('active');
+  else if(tab==='browse')document.getElementById('pgBrowse').classList.add('active');
+  else if(tab==='bookmark'){document.getElementById('pgBookmark').classList.add('active');renderBk();}
+  else if(tab==='settings')renderSet();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-function renderBookmarks(){var el=document.getElementById('bkContent');if(!S.bookmarks.length){el.innerHTML='<div class="bkempty"><div class="bkempty-icon">📚</div><h3>Belum ada bookmark</h3><p>Tambahkan komik favoritmu!</p></div>';return;}var items=S.bookmarks.map(function(bk){return S.allComics.find(function(c){return c.id===bk.id;})||bk;});el.innerHTML='<div class="cgrid">'+items.map(function(c,i){return '<div class="ccard" onclick="openDetail(\''+c.id+'\')"><div class="ccover">'+imgTag(c.cover,c.title,i)+'<span class="cbadge">'+escXml(c.type||'')+'</span></div><div class="cinfo"><div class="ctitle">'+escXml(c.title)+'</div></div></div>';}).join('')+'</div>';}
+function renderBk(){var el=document.getElementById('bkContent');if(!S.bookmarks.length){el.innerHTML='<div class="bkempty"><div class="bkempty-icon">📚</div><h3>Belum ada bookmark</h3><p>Tambahkan komik favoritmu!</p></div>';return;}el.innerHTML='<div class="cgrid">'+S.bookmarks.map(function(b,i){return '<div class="ccard" onclick="openDetail(\''+b.id+'\')"><div class="ccover">'+img(b.cover,b.title,i)+'<span class="cbadge">'+esc(b.type||'')+'</span></div><div class="cinfo"><div class="ctitle">'+esc(b.title)+'</div></div></div>';}).join('')+'</div>';}
 
-function renderSettings(){document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});var old=document.getElementById('pgSettings');if(old)old.remove();var h='<div class="pgview active" id="pgSettings"><div class="sec"><div class="sec-hdr"><h2 class="sec-title">⚙️ Pengaturan</h2></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#6C5CE7">🌙</div><span class="slbl">Mode Gelap</span></div><div class="tgl'+(S.theme==='dark'?' active':'')+'" onclick="toggleTheme()"></div></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#'+(S.proxyOk?'00B894':'FF3B30')+'">'+(S.proxyOk?'✅':'❌')+'</div><span class="slbl">Proxy Vercel</span></div><span style="font-size:12px;font-weight:700;color:'+(S.proxyOk?'var(--grn)':'var(--red)')+'">'+(S.proxyOk?'Aktif':'Tidak Aktif')+'</span></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#FF9500">📊</div><span class="slbl">Total Komik</span></div><span style="font-weight:700">'+S.allComics.length+'</span></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#5856D6">🕐</div><span class="slbl">Update Terakhir</span></div><span style="font-size:12px;color:var(--t2)">'+(S.lastUpd?S.lastUpd.toLocaleTimeString('id-ID'):'-')+'</span></div><div class="sitem" style="cursor:pointer" onclick="refreshAll()"><div class="sleft"><div class="sicon" style="background:#FF3B30">🔄</div><span class="slbl">Refresh Data</span></div><span style="color:var(--ac)">↗</span></div><p style="text-align:center;color:var(--t2);font-size:12px;margin-top:20px">KomikKu v10.0 • MangaDex API<br>Proxy: '+(S.proxyOk?'✅ Vercel Aktif':'❌ Perlu Deploy ke Vercel')+'<br><br>'+(S.proxyOk?'':'<b style=color:var(--red)>⚠️ Deploy ke Vercel untuk mengaktifkan<br>fitur baca komik langsung!</b>')+'</p></div></div>';document.getElementById('mainCnt').insertAdjacentHTML('beforeend',h);}
+function renderSet(){document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});var o=document.getElementById('pgSettings');if(o)o.remove();var h='<div class="pgview active" id="pgSettings"><div class="sec"><div class="sec-hdr"><h2 class="sec-title">⚙️ Pengaturan</h2></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#6C5CE7">🌙</div><span class="slbl">Mode Gelap</span></div><div class="tgl'+(S.theme==='dark'?' active':'')+'" onclick="toggleTheme()"></div></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#'+(S.proxyOk?'00B894':'FF3B30')+'">'+(S.proxyOk?'✅':'❌')+'</div><span class="slbl">Proxy Vercel</span></div><span style="font-weight:700;color:'+(S.proxyOk?'var(--grn)':'var(--red)')+'">'+(S.proxyOk?'Aktif':'Nonaktif')+'</span></div><div class="sitem"><div class="sleft"><div class="sicon" style="background:#FF9500">📊</div><span class="slbl">Total Komik</span></div><span style="font-weight:700">'+S.allComics.length+'</span></div><div class="sitem" style="cursor:pointer" onclick="refreshAll()"><div class="sleft"><div class="sicon" style="background:#FF3B30">🔄</div><span class="slbl">Refresh</span></div><span style="color:var(--ac)">↗</span></div><p style="text-align:center;color:var(--t2);font-size:12px;margin-top:20px">KomikKu v11 • MangaDex + Vercel Proxy</p></div></div>';document.getElementById('mainCnt').insertAdjacentHTML('beforeend',h);}
 
-// ===== DETAIL =====
+// ==============================================
+//  DETAIL PAGE
+// ==============================================
 async function openDetail(id){
   document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});
   document.getElementById('pgDetail').classList.add('active');
   var dc=document.getElementById('detCnt');
   dc.innerHTML='<div class="ldbox"><div class="spinner"></div><span class="ldtxt">Memuat detail...</span></div>';
   window.scrollTo({top:0});
-  
-  if(!S.proxyOk){dc.innerHTML='<div class="sec"><div class="ldbox"><p style="color:var(--red)">❌ Proxy tidak aktif. Deploy ke Vercel!</p><button class="btn-p" onclick="goBack()" style="margin-top:16px;flex:none;padding:14px 28px">← Kembali</button></div></div>';return;}
-  
+
   await sleep(300);
-  var detRes=await apiFetch('/manga/'+id+'?includes[]=cover_art&includes[]=author&includes[]=artist');
-  if(!detRes||!detRes.data){dc.innerHTML='<div class="sec"><div class="ldbox"><p>Komik tidak ditemukan</p><button class="btn-p" onclick="goBack()" style="margin-top:16px;flex:none;padding:14px 28px">← Kembali</button></div></div>';return;}
-  
-  var m=detRes.data,a=m.attributes;
+  var det=await api('/manga/'+id+'?includes[]=cover_art&includes[]=author&includes[]=artist');
+  if(!det||!det.data){dc.innerHTML='<div class="sec"><div class="ldbox"><p>Tidak ditemukan</p><button class="btn-p" onclick="goBack()" style="margin-top:16px;flex:none;padding:14px 28px">← Kembali</button></div></div>';return;}
+
+  var m=det.data,a=m.attributes;
   var title=getTitle(m),cover=getCover(m.id,m.relationships),desc=getDesc(m),type=getType(m),status=a.status||'',year=a.year||'';
   var tags=(a.tags||[]).map(function(t){return t.attributes&&t.attributes.name&&t.attributes.name.en||'';}).filter(Boolean).slice(0,6);
-  var authorName='';for(var r=0;r<m.relationships.length;r++){if(m.relationships[r].type==='author'&&m.relationships[r].attributes){authorName=m.relationships[r].attributes.name||'';break;}}
-  
+  var author='';for(var r=0;r<m.relationships.length;r++){if(m.relationships[r].type==='author'&&m.relationships[r].attributes){author=m.relationships[r].attributes.name||'';break;}}
+
+  console.log('Detail:',title,'| cover:',cover);
+
   S.curDetail={id:id,title:title,cover:cover,type:type};
-  
-  await sleep(300);
-  var chRes=await apiFetch('/manga/'+id+'/feed?translatedLanguage[]=id&translatedLanguage[]=en&limit=100&order[chapter]=desc&includeFutureUpdates=0&includeEmptyPages=0');
-  var chapters=[];
-  if(chRes&&chRes.data&&Array.isArray(chRes.data)){chapters=chRes.data.filter(function(ch){return ch.attributes&&ch.attributes.chapter;}).map(function(ch){return{id:ch.id,num:ch.attributes.chapter,title:ch.attributes.title||('Chapter '+ch.attributes.chapter),lang:ch.attributes.translatedLanguage,date:new Date(ch.attributes.readableAt).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'}),};});}
-  S.curChapters=chapters;
+
+  await sleep(400);
+  var chRes=await api('/manga/'+id+'/feed?translatedLanguage[]=id&translatedLanguage[]=en&limit=100&order[chapter]=desc&includeFutureUpdates=0&includeEmptyPages=0');
+  var chs=[];
+  if(chRes&&chRes.data&&Array.isArray(chRes.data)){
+    chs=chRes.data.filter(function(ch){return ch.attributes&&ch.attributes.chapter;}).map(function(ch){
+      return{id:ch.id,num:ch.attributes.chapter,title:ch.attributes.title||('Chapter '+ch.attributes.chapter),lang:ch.attributes.translatedLanguage,date:new Date(ch.attributes.readableAt).toLocaleDateString('id-ID',{day:'numeric',month:'short',year:'numeric'})};
+    });
+  }
+  S.curChapters=chs;
+  console.log('Chapters:',chs.length);
   var bk=S.bookmarks.some(function(b){return b.id===id;});
-  
-  dc.innerHTML='<div class="det-hdr">'+imgTag(cover,title,0)+'<div class="det-hdr-ovr"></div><div class="det-back" onclick="goBack()">←</div></div><div class="det-cnt"><div class="det-crow"><div class="det-cov">'+imgTag(cover,title,1)+'</div><div class="det-meta"><h1 class="det-title">'+escXml(title)+'</h1><div class="det-tags"><span class="det-tag">'+escXml(type.toUpperCase())+'</span><span class="det-tag">'+escXml(status)+'</span>'+tags.slice(0,3).map(function(t){return '<span class="det-tag">'+escXml(t)+'</span>';}).join('')+'</div><div class="det-stats">'+(year?'<div class="det-stat"><div class="det-sv">'+year+'</div><div class="det-sl">Tahun</div></div>':'')+'<div class="det-stat"><div class="det-sv">'+chapters.length+'</div><div class="det-sl">Chapter</div></div>'+(authorName?'<div class="det-stat"><div class="det-sv" style="font-size:11px">'+escXml(authorName)+'</div><div class="det-sl">Author</div></div>':'')+'</div></div></div><div class="det-acts">'+(chapters.length?'<button class="btn-p" onclick="readChapter(\''+chapters[chapters.length-1].id+'\',\''+escXml(title).replace(/'/g,"\\'")+'\')">📖 Baca Sekarang</button>':'<button class="btn-p" style="opacity:.5" disabled>📖 Belum Ada Chapter</button>')+'<div class="btn-s" onclick="toggleBk(\''+id+'\',\''+encodeURIComponent(title)+'\',\''+encodeURIComponent(cover)+'$">'+(bk?'❤️':'🤍')+'</div></div><div class="det-syn"><h3>Sinopsis</h3><p>'+escXml(desc||'Belum ada sinopsis.')+'</p></div><div class="chlist"><h3>📖 Daftar Chapter ('+chapters.length+')</h3>'+(chapters.length?chapters.map(function(ch,i){var langIcon=ch.lang==='id'?' 🇮🇩':' 🇬🇧';return '<div class="chitem" onclick="readChapter(\''+ch.id+'\',\''+escXml(title).replace(/'/g,"\\'")+'\')">'+'<div class="chleft"><div class="chnum">'+escXml(ch.num)+'</div><div><div class="chtitle">'+escXml(ch.title)+'</div><div class="chdate">'+escXml(ch.date)+langIcon+'</div></div></div><span>→</span></div>';}).join(''):'<div style="text-align:center;padding:20px;color:var(--t2)">Belum ada chapter tersedia</div>')+'</div></div>';
+
+  dc.innerHTML=
+    '<div class="det-hdr">'+img(cover,title,0)+'<div class="det-hdr-ovr"></div><div class="det-back" onclick="goBack()">←</div></div>'+
+    '<div class="det-cnt"><div class="det-crow">'+
+      '<div class="det-cov">'+img(cover,title,1)+'</div>'+
+      '<div class="det-meta"><h1 class="det-title">'+esc(title)+'</h1>'+
+        '<div class="det-tags"><span class="det-tag">'+esc(type.toUpperCase())+'</span><span class="det-tag">'+esc(status)+'</span>'+tags.slice(0,3).map(function(t){return '<span class="det-tag">'+esc(t)+'</span>';}).join('')+'</div>'+
+        '<div class="det-stats">'+(year?'<div class="det-stat"><div class="det-sv">'+year+'</div><div class="det-sl">Tahun</div></div>':'')+
+          '<div class="det-stat"><div class="det-sv">'+chs.length+'</div><div class="det-sl">Chapter</div></div>'+
+          (author?'<div class="det-stat"><div class="det-sv" style="font-size:11px">'+esc(author)+'</div><div class="det-sl">Author</div></div>':'')+
+        '</div></div></div>'+
+      '<div class="det-acts">'+(chs.length?'<button class="btn-p" onclick="readCh(\''+chs[chs.length-1].id+'\',\''+esc(title).replace(/'/g,"\\'")+'\')">📖 Baca Sekarang</button>':'<button class="btn-p" style="opacity:.5" disabled>📖 Belum Ada Chapter</button>')+
+        '<div class="btn-s" onclick="togBk(\''+id+'\',\''+encodeURIComponent(title)+'\',\''+encodeURIComponent(cover)+'$">'+(bk?'❤️':'🤍')+'</div></div>'+
+      '<div class="det-syn"><h3>Sinopsis</h3><p>'+esc(desc||'Belum ada sinopsis.')+'</p></div>'+
+      '<div class="chlist"><h3>📖 Chapter ('+chs.length+')</h3>'+
+        (chs.length?chs.map(function(ch,i){var ic=ch.lang==='id'?' 🇮🇩':' 🇬🇧';return '<div class="chitem" onclick="readCh(\''+ch.id+'\',\''+esc(title).replace(/'/g,"\\'")+'\')"><div class="chleft"><div class="chnum">'+esc(ch.num)+'</div><div><div class="chtitle">'+esc(ch.title)+'</div><div class="chdate">'+esc(ch.date)+ic+'</div></div></div><span>→</span></div>';}).join(''):'<div style="text-align:center;padding:20px;color:var(--t2)">Belum ada chapter</div>')+
+      '</div></div>';
   window.scrollTo({top:0});
 }
 
-// ===== READER =====
-async function readChapter(chId,title){
+// ==============================================
+//  READER — Baca komik langsung!
+// ==============================================
+async function readCh(chId, title) {
   document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});
   document.getElementById('pgReader').classList.add('active');
   var rc=document.getElementById('rdCnt');
-  rc.innerHTML='<div class="rdhdr"><div class="det-back" onclick="goBackToDetail()">←</div><div class="rdtitle">📖 '+escXml(title)+'</div></div><div class="ldbox" style="margin-top:80px"><div class="spinner"></div><span class="ldtxt">Memuat halaman...</span></div>';
+  rc.innerHTML='<div class="rdhdr"><div class="det-back" onclick="goBackDet()">←</div><div class="rdtitle">📖 '+esc(title)+'</div></div><div class="ldbox" style="margin-top:80px"><div class="spinner"></div><span class="ldtxt">Memuat halaman komik...</span></div>';
   window.scrollTo({top:0});
-  
+
   await sleep(300);
-  var atHome=await apiFetch('/at-home/server/'+chId);
+  var ah=await api('/at-home/server/'+chId);
+  console.log('AtHome response:',ah?'has data':'null');
+
   var pages=[];
-  if(atHome&&atHome.baseUrl&&atHome.chapter){var base=atHome.baseUrl;var hash=atHome.chapter.hash;var data=atHome.chapter.data||[];pages=data.map(function(p){return base+'/data/'+hash+'/'+p;});}
-  
-  if(!pages.length){rc.innerHTML='<div class="rdhdr"><div class="det-back" onclick="goBackToDetail()">←</div><div class="rdtitle">📖 '+escXml(title)+'</div></div><div class="ldbox" style="margin-top:80px"><div style="font-size:48px">📖</div><p style="color:var(--t2);text-align:center">Halaman belum tersedia</p><button class="btn-p" onclick="goBackToDetail()" style="flex:none;padding:14px 28px;margin-top:16px">← Kembali</button></div>';return;}
-  
-  var curIdx=-1;for(var i=0;i<S.curChapters.length;i++){if(S.curChapters[i].id===chId){curIdx=i;break;}}
-  var prevCh=curIdx<S.curChapters.length-1?S.curChapters[curIdx+1]:null;
-  var nextCh=curIdx>0?S.curChapters[curIdx-1]:null;
+  if(ah&&ah.baseUrl&&ah.chapter){
+    var base=ah.baseUrl, hash=ah.chapter.hash, data=ah.chapter.data||[];
+    console.log('Pages raw:',data.length,'| base:',base,'| hash:',hash.substring(0,16)+'...');
+    pages=data.map(function(p){return base+'/data/'+hash+'/'+p;});
+  }
+  console.log('Pages:',pages.length);
+
+  if(!pages.length){
+    rc.innerHTML='<div class="rdhdr"><div class="det-back" onclick="goBackDet()">←</div><div class="rdtitle">📖 '+esc(title)+'</div></div><div class="ldbox" style="margin-top:80px"><div style="font-size:48px">📖</div><p style="color:var(--t2);text-align:center">Halaman belum tersedia</p><button class="btn-p" onclick="goBackDet()" style="flex:none;padding:14px 28px;margin-top:16px">← Kembali</button></div>';
+    return;
+  }
+
+  var ci=-1;for(var i=0;i<S.curChapters.length;i++){if(S.curChapters[i].id===chId){ci=i;break;}}
+  var prev=ci<S.curChapters.length-1?S.curChapters[ci+1]:null;
+  var next=ci>0?S.curChapters[ci-1]:null;
+
   var nav='<div class="rdnav">';
-  if(prevCh)nav+='<button class="btn-p" onclick="readChapter(\''+prevCh.id+'\',\''+escXml(title).replace(/'/g,"\\'")+'\')">⬅️ Prev</button>';
-  nav+='<button class="btn-p" onclick="goBackToDetail()" style="background:var(--bg2);color:var(--t1);border:1px solid var(--gbr)">📋 Chapter</button>';
-  if(nextCh)nav+='<button class="btn-p" onclick="readChapter(\''+nextCh.id+'\',\''+escXml(title).replace(/'/g,"\\'")+'\')">Next ➡️</button>';
+  if(prev)nav+='<button class="btn-p" onclick="readCh(\''+prev.id+'\',\''+esc(title).replace(/'/g,"\\'")+'\')">⬅️ Prev</button>';
+  nav+='<button class="btn-p" onclick="goBackDet()" style="background:var(--bg2);color:var(--t1);border:1px solid var(--gbr)">📋 Chapter</button>';
+  if(next)nav+='<button class="btn-p" onclick="readCh(\''+next.id+'\',\''+esc(title).replace(/'/g,"\\'")+'\')">Next ➡️</button>';
   nav+='</div>';
-  
-  rc.innerHTML='<div class="rdpage"><div class="rdhdr"><div class="det-back" onclick="goBackToDetail()">←</div><div class="rdtitle">📖 '+escXml(title)+'</div></div><div class="rdimgs">'+pages.map(function(url,i){return imgTag(url,'Page '+(i+1),i,'style="background:var(--bg2);min-height:100px"');}).join('')+'</div>'+nav+'</div>';
+
+  // Render gambar chapter — semua melalui proxy Vercel!
+  rc.innerHTML='<div class="rdpage"><div class="rdhdr"><div class="det-back" onclick="goBackDet()">←</div><div class="rdtitle">📖 '+esc(title)+'</div></div><div class="rdimgs">'+
+    pages.map(function(url,i){return img(url,'Page '+(i+1),i,'style="background:#e0e0e0;min-height:200px"');}).join('')+
+    '</div>'+nav+'</div>';
   window.scrollTo({top:0});
 }
-function goBackToDetail(){if(S.curDetail)openDetail(S.curDetail.id);else goBack();}
 
-// ===== SEARCH =====
-var _searchTmr;
-function doSearch(q){clearTimeout(_searchTmr);if(q.length<2){switchTab('home');return;}_searchTmr=setTimeout(async function(){if(!S.proxyOk){toast('❌ Proxy tidak aktif!');return;}document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.getElementById('pgBrowse').classList.add('active');document.getElementById('browseTitle').textContent='🔍 Hasil: '+q;var grid=document.getElementById('browseGrid');grid.innerHTML='<div class="ldbox" style="grid-column:1/-1"><div class="spinner"></div><span class="ldtxt">Mencari...</span></div>';await sleep(300);var res=await apiFetch('/manga?limit=20&title='+encodeURIComponent(q)+'&includes[]=cover_art&contentRating[]=safe&contentRating[]=suggestive');var results=parseList(res);grid.innerHTML=results.length?results.map(function(c,i){return comicCard(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ditemukan: "'+escXml(q)+'"</div>';},600);}
+function goBackDet(){if(S.curDetail)openDetail(S.curDetail.id);else goBack();}
 
-async function browseGenre(name,tagId){if(!S.proxyOk){toast('❌ Proxy tidak aktif!');return;}document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.getElementById('pgBrowse').classList.add('active');document.getElementById('browseTitle').textContent='🎭 Genre: '+name;var grid=document.getElementById('browseGrid');grid.innerHTML='<div class="ldbox" style="grid-column:1/-1"><div class="spinner"></div><span class="ldtxt">Memuat...</span></div>';await sleep(300);var res=await apiFetch('/manga?limit=20&includes[]=cover_art&tags[]='+tagId+'&order[followedCount]=desc&contentRating[]=safe&contentRating[]=suggestive&hasAvailableChapters=true');var results=parseList(res);grid.innerHTML=results.length?results.map(function(c,i){return comicCard(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ada data</div>';}
+// ==============================================
+//  SEARCH
+// ==============================================
+var _sTmr;
+function doSearch(q){clearTimeout(_sTmr);if(q.length<2){switchTab('home');return;}_sTmr=setTimeout(async function(){document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.getElementById('pgBrowse').classList.add('active');document.getElementById('browseTitle').textContent='🔍 Hasil: '+q;var g=document.getElementById('browseGrid');g.innerHTML='<div class="ldbox" style="grid-column:1/-1"><div class="spinner"></div><span class="ldtxt">Mencari...</span></div>';await sleep(300);var r=await api('/manga?limit=20&title='+encodeURIComponent(q)+'&includes[]=cover_art&contentRating[]=safe&contentRating[]=suggestive');var res=parseList(r);g.innerHTML=res.length?res.map(function(c,i){return card(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ditemukan</div>';},600);}
 
-async function loadMore(type){if(!S.proxyOk){toast('❌ Proxy tidak aktif!');return;}document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.getElementById('pgBrowse').classList.add('active');var grid=document.getElementById('browseGrid');grid.innerHTML='<div class="ldbox" style="grid-column:1/-1"><div class="spinner"></div><span class="ldtxt">Memuat...</span></div>';if(type==='popular'){document.getElementById('browseTitle').textContent='🔥 Populer';var res=await apiFetch('/manga?limit=30&order[followedCount]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');var list=parseList(res);grid.innerHTML=list.length?list.map(function(c,i){return comicCard(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ada data</div>';}else{document.getElementById('browseTitle').textContent='⚡ Terbaru';var res=await apiFetch('/manga?limit=30&order[updatedAt]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');var list=parseList(res);grid.innerHTML=list.length?list.map(function(c,i){return comicCard(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ada data</div>';}}
+async function browseGenre(name,tid){document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.getElementById('pgBrowse').classList.add('active');document.getElementById('browseTitle').textContent='🎭 '+name;var g=document.getElementById('browseGrid');g.innerHTML='<div class="ldbox" style="grid-column:1/-1"><div class="spinner"></div><span class="ldtxt">Memuat...</span></div>';await sleep(300);var r=await api('/manga?limit=20&includes[]=cover_art&tags[]='+tid+'&order[followedCount]=desc&contentRating[]=safe&contentRating[]=suggestive&hasAvailableChapters=true');var res=parseList(r);g.innerHTML=res.length?res.map(function(c,i){return card(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ada data</div>';}
+
+async function loadMore(type){document.querySelectorAll('.pgview').forEach(function(p){p.classList.remove('active');});document.getElementById('pgBrowse').classList.add('active');var g=document.getElementById('browseGrid');g.innerHTML='<div class="ldbox" style="grid-column:1/-1"><div class="spinner"></div><span class="ldtxt">Memuat...</span></div>';if(type==='popular'){document.getElementById('browseTitle').textContent='🔥 Populer';var r=await api('/manga?limit=30&order[followedCount]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');var l=parseList(r);g.innerHTML=l.length?l.map(function(c,i){return card(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ada data</div>';}else{document.getElementById('browseTitle').textContent='⚡ Terbaru';var r=await api('/manga?limit=30&order[updatedAt]=desc&includes[]=cover_art&hasAvailableChapters=true&contentRating[]=safe&contentRating[]=suggestive');var l=parseList(r);g.innerHTML=l.length?l.map(function(c,i){return card(c,i);}).join(''):'<div style="grid-column:1/-1;text-align:center;padding:40px;color:var(--t2)">Tidak ada data</div>';}}
 
 function goBack(){switchTab('home');}
 
-// ===== BOOKMARK =====
-function toggleBk(id,encTitle,encCover){var idx=S.bookmarks.findIndex(function(b){return b.id===id;});if(idx>=0){S.bookmarks.splice(idx,1);toast('❌ Dihapus');}else{S.bookmarks.push({id:id,title:decodeURIComponent(encTitle),cover:decodeURIComponent(encCover),type:S.curDetail?S.curDetail.type:'manga'});toast('❤️ Bookmark ditambahkan');}localStorage.setItem('bk6',JSON.stringify(S.bookmarks));}
+// ==============================================
+//  BOOKMARK
+// ==============================================
+function togBk(id,et,ec){var idx=S.bookmarks.findIndex(function(b){return b.id===id;});if(idx>=0){S.bookmarks.splice(idx,1);toast('❌ Dihapus');}else{S.bookmarks.push({id:id,title:decodeURIComponent(et),cover:decodeURIComponent(ec),type:S.curDetail?S.curDetail.type:'manga'});toast('❤️ Ditambahkan');}localStorage.setItem('bk7',JSON.stringify(S.bookmarks));}
 
-// ===== UTILITIES =====
-function toast(msg){var t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},3000);}
-function toggleTheme(){S.theme=S.theme==='light'?'dark':'light';applyTheme();localStorage.setItem('th6',S.theme);}
+// ==============================================
+//  UTILITIES
+// ==============================================
+function toast(m){var t=document.getElementById('toast');t.textContent=m;t.classList.add('show');setTimeout(function(){t.classList.remove('show');},3000);}
+function toggleTheme(){S.theme=S.theme==='light'?'dark':'light';applyTheme();localStorage.setItem('th7',S.theme);}
 function applyTheme(){document.documentElement.setAttribute('data-theme',S.theme);var b=document.getElementById('themeBtn');if(b)b.textContent=S.theme==='dark'?'☀️':'🌙';}
-async function refreshAll(){toast('⏳ Refresh...');_cache={};await init();toast('✅ Diperbarui!');}
+async function refreshAll(){toast('⏳ Refresh...');_cache={};await init();toast('✅ OK!');}
 
 document.addEventListener('DOMContentLoaded',init);
 </script>
